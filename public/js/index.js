@@ -34,7 +34,12 @@ const main = async () => {
     socket.on("message history", (messages) => {
         const chatBox = document.getElementById("chatBox");
         messages.forEach(({ username, message }) => {
-            chatBox.innerHTML += `<p>${username} - ${message}</p>`;
+            chatBox.innerHTML += `<div class="message">
+                     <div class="message-header">
+                        <span class="username">${username}</span>
+                    </div>
+                    <div class="message-bubble">${message}</div>
+                </div>`;
         })
     });
 
